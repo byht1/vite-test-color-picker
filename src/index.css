@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600&family=Roboto:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Blinker', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+svg {
+  fill: currentColor;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+section {
+  margin: 0 auto;
+}
