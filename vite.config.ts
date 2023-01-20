@@ -16,6 +16,7 @@ srcRootContent.forEach(directory => {
 // https://vitejs.dev/config/
 export default defineConfig({
   root: 'src',
+  base: '/vite-test-color-picker',
   resolve: {
     alias: {
       ...absolutePathAliases,
