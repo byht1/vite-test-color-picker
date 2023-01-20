@@ -1,6 +1,6 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useState } from 'react'
 import { RxLockClosed, RxLockOpen2 } from 'react-icons/rx'
-import { generateRandomColor, TData } from 'helpers'
+import { TData } from 'helpers'
 import { Button, Text, TextBox } from './ColorSection.styled'
 import chroma from 'chroma-js'
 import { Box } from 'component/Box'
@@ -13,7 +13,7 @@ type Props = {
 
 export const ColorSection: FC<Props> = ({ defaultValue, index, set }) => {
   const isLock = defaultValue.lock
-  const [value, setValue] = useState(defaultValue)
+  const [value] = useState(defaultValue)
   const { hex, rgb } = value
   const rgbText = `rgb(${rgb.join(', ')})`
 

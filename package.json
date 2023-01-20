@@ -8,6 +8,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
     "component": "generate-react component"
   },
   "dependencies": {
@@ -28,8 +30,18 @@
     "@types/shortid": "^0.0.29",
     "@types/styled-components": "^5.1.26",
     "@types/styled-system": "^5.1.16",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
     "@vitejs/plugin-react": "^3.0.0",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "generate-react-cli": "^8.2.0",
+    "prettier": "^2.8.3",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
   }
