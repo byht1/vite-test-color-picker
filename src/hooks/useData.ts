@@ -11,7 +11,7 @@ export const useData = (value: number) => {
 
   useEffect(() => {
     setSearchParams({ colors: data.map(x => x.hex.split('#')[1]).join(',') })
-  }, [data])
+  }, [data, setSearchParams])
 
   useEffect(() => {
     window.addEventListener('keydown', clickSpace)
@@ -19,7 +19,11 @@ export const useData = (value: number) => {
     return () => {
       window.removeEventListener('keydown', clickSpace)
     }
-  }, [clickSpace])
+  }, [])
+
+  useEffect(() => {
+    console.log(data)
+  }, [])
 
   function clickSpace(e: KeyboardEvent) {
     if (e.code !== 'Space') {
