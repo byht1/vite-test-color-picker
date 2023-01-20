@@ -18,5 +18,7 @@
     "baseUrl": "src"
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "exclude": ["node_modules", "templates"],
+  "files": ["templates/component/TemplateName.tsx"]
 }

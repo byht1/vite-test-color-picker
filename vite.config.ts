@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'path'
+import path, { resolve } from 'path'
 import { readdirSync } from 'fs'
 
 const absolutePathAliases: { [key: string]: string } = {}
@@ -16,6 +16,7 @@ srcRootContent.forEach(directory => {
 // https://vitejs.dev/config/
 export default defineConfig({
   root: 'src',
+  publicDir: '../public',
   base: '/vite-test-color-picker',
   resolve: {
     alias: {
