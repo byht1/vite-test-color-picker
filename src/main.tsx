@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter basename="vite-test-color-picker">
+    <BrowserRouter basename="/vite-test-color-picker">
       <App />
     </BrowserRouter>
   </React.StrictMode>
