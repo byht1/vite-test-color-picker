@@ -21,10 +21,6 @@ export const useData = (value: number) => {
     }
   }, [])
 
-  useEffect(() => {
-    console.log(data)
-  }, [])
-
   function clickSpace(e: KeyboardEvent) {
     if (e.code !== 'Space') {
       return
