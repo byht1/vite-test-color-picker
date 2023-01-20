@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import 'normalize.css'
 import './index.css'
+import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter basename="vite-test-color-picker">
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 )
