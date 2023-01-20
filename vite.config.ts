@@ -1,12 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path, { resolve } from 'path'
-import { readdirSync } from 'fs'
+import react from "@vitejs/plugin-react"
+import checker from "vite-plugin-checker"
+import { defineConfig } from "vite"
+import path from "path"
+import { readdirSync } from "fs"
 
 const absolutePathAliases: { [key: string]: string } = {}
-const srcPath = path.resolve('./src/')
+const srcPath = path.resolve("./src/")
 const srcRootContent = readdirSync(srcPath, { withFileTypes: true }).map(
-  dirent => dirent.name.replace(/(\.ts){1}(x?)/, '')
+  dirent => dirent.name.replace(/(\.ts){1}(x?)/, "")
 )
 
 srcRootContent.forEach(directory => {
@@ -15,9 +16,9 @@ srcRootContent.forEach(directory => {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: 'src',
-  publicDir: '../public',
-  base: '/vite-test-color-picker',
+  root: "src",
+  publicDir: "../public",
+  base: "/vite-test-color-picker",
   resolve: {
     alias: {
       ...absolutePathAliases,
@@ -25,11 +26,16 @@ export default defineConfig({
   },
 
   build: {
-    outDir: '../dist',
+    outDir: "../dist",
   },
   server: {
     open: true,
     port: 3000,
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    checker({
+      typescript: true,
+    }),
+  ],
 })
