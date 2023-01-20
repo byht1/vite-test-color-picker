@@ -7,10 +7,14 @@ export const useData = (value: number) => {
   const [data, setData] = useState<TData[]>(
     queryParams(searchParams.get("colors")) || defaultValue(value)
   )
+
   //   setData()
 
   useEffect(() => {
-    setSearchParams({ colors: data.map(x => x.hex.split("#")[1]).join(",") })
+    setSearchParams({
+      colors: JSON.stringify(data.map(x => [x.hex, x.opacity])),
+    })
+    // setSearchParams({ colors: data.map(x => x.hex.split("#")[1]).join(",") })
   }, [data, setSearchParams])
 
   useEffect(() => {

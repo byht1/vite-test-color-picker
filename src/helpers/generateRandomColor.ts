@@ -1,15 +1,16 @@
-import shortid from 'shortid'
+import shortid from "shortid"
 
 export type TData = {
   id: string
   hex: string
   rgb: number[]
   lock: boolean
+  opacity: number
 }
 
 export const generateRandomColor = (): TData => {
-  const hexCodes = '0123456789ABCDEF'
-  let color = ''
+  const hexCodes = "0123456789ABCDEF"
+  let color = ""
   for (let i = 0; i < 6; i++) {
     color += hexCodes[Math.floor(Math.random() * hexCodes.length)]
   }
@@ -18,17 +19,27 @@ export const generateRandomColor = (): TData => {
     hex: `#${color}`,
     rgb: hexToRgb(color),
     lock: false,
+    opacity: 1,
   }
 }
 
 export const queryParams = (value: string | null): false | TData[] => {
   if (!value) return false
 
-  return value.split(',').map(x => ({
+  const queryParse: string[] = JSON.parse(value)
+  const query = queryParse.map(x => {
+    return {
+      hex: x[0].split("#")[1],
+      opacity: x[1],
+    }
+  })
+
+  return query.map(({ hex, opacity }) => ({
     id: shortid.generate(),
-    hex: `#${x}`,
-    rgb: hexToRgb(x),
+    hex: `#${hex}`,
+    rgb: hexToRgb(hex),
     lock: false,
+    opacity: Number(opacity),
   }))
 }
 

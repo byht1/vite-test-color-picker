@@ -1,8 +1,8 @@
-import { ColorSection } from 'component/ColorSection'
-import {  useState } from 'react'
+import { ColorSection } from "component/ColorSection"
+import { useState } from "react"
 
-import { Box } from '../Box'
-import { useData } from '../../hooks/useData'
+import { Box } from "../Box"
+import { useData } from "../../hooks/useData"
 
 //
 export const ColorsBody = () => {
