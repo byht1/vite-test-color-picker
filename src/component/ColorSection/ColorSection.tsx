@@ -13,7 +13,7 @@ type Props = {
 
 export const ColorSection: FC<Props> = ({ defaultValue, index, set }) => {
   const isLock = defaultValue.lock
-  const [value, setValue] = useState(defaultValue)
+  const [value] = useState(defaultValue)
   const { hex, rgb } = value
   const rgbText = `rgb(${rgb.join(', ')})`
 
